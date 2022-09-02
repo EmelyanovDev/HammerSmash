@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 138688006595228729}
   - component: {fileID: 138688006595228730}
   - component: {fileID: 138688006595228731}
+  - component: {fileID: 5306679504765267032}
   m_Layer: 6
   m_Name: HammerModel
   m_TagString: Untagged
@@ -94,7 +95,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4640561333038222410}
-  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -107,7 +108,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4640561333038222410}
-  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -121,7 +122,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4640561333038222410}
   serializedVersion: 2
-  m_Mass: 10
+  m_Mass: 2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -138,13 +139,13 @@ HingeJoint:
   m_GameObject: {fileID: 4640561333038222410}
   m_ConnectedBody: {fileID: 2889461326689306866}
   m_ConnectedArticulationBody: {fileID: 0}
-  m_Anchor: {x: 0, y: -0.0135, z: 0}
+  m_Anchor: {x: 0, y: -0.0132, z: -0.0004}
   m_Axis: {x: 1, y: 0, z: 0}
-  m_AutoConfigureConnectedAnchor: 1
+  m_AutoConfigureConnectedAnchor: 0
   m_ConnectedAnchor: {x: 0, y: 0, z: 0}
   m_UseSpring: 1
   m_Spring:
-    spring: 500
+    spring: 800
     damper: 50
     targetPosition: 0
   m_UseMotor: 0
@@ -163,8 +164,21 @@ HingeJoint:
   m_BreakTorque: Infinity
   m_EnableCollision: 0
   m_EnablePreprocessing: 1
-  m_MassScale: 10
+  m_MassScale: 1
   m_ConnectedMassScale: 1
+--- !u!114 &5306679504765267032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4640561333038222410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342f77959674a4c947fe2e4c40c97e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gravityAddition: -50
 --- !u!1 &5208875749472113171
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,6 +188,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5208875749472113170}
+  - component: {fileID: 1673038464}
   m_Layer: 0
   m_Name: Hammer
   m_TagString: Untagged
@@ -198,6 +213,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1673038464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208875749472113171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bee214f89aee408189c741f646580ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _rotationSpeed: 10
+  _hingeJoint: {fileID: 138688006595228731}
 --- !u!1 &8742575287501402158
 GameObject:
   m_ObjectHideFlags: 0
@@ -209,7 +238,6 @@ GameObject:
   - component: {fileID: 1715946173693240351}
   - component: {fileID: 113324384853182059}
   - component: {fileID: 2889461326689306865}
-  - component: {fileID: 2889461326689306867}
   - component: {fileID: 2889461326689306864}
   - component: {fileID: 2889461326689306866}
   m_Layer: 7
@@ -284,20 +312,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2889461326689306867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8742575287501402158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bee214f89aee408189c741f646580ece, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 10
-  _hingeJoint: {fileID: 138688006595228731}
 --- !u!136 &2889461326689306864
 CapsuleCollider:
   m_ObjectHideFlags: 0
