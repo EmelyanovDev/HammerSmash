@@ -4,9 +4,8 @@ namespace Camera
 {
     public class SmoothCamera : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
-    
         [Range(0,1)] [SerializeField] private float _cameraSharpness;
+        [SerializeField] private Transform _target;
 
         private void FixedUpdate()
         {

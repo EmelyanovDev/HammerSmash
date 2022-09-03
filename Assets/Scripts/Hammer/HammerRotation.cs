@@ -1,15 +1,14 @@
-﻿using System;
-using UI;
+﻿using UI;
 using UnityEngine;
 
 namespace Hammer
 {
     public class HammerRotation : MonoBehaviour
     {
-        [SerializeField] private float _rotationSpeed;
         [SerializeField] private Rigidbody _hammerHinge;
+        [SerializeField] private float _rotationSpeed;
         [SerializeField] private float _maxAngularVelocity;
-        
+
         private void OnEnable()
         {
             RotationPanel.OnPointerDrag += Rotate;
