@@ -1,5 +1,7 @@
 using System;
+using Hammer;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace UI
@@ -15,10 +17,24 @@ namespace UI
             _heartsCount = _hearts.Length;
         }
 
-        private void RemoveHeart()
+        private void OnEnable()
         {
-            _hearts[_heartsCount - 1].gameObject.SetActive(false);
+            HammerCollision.HammerWasAttacked += RemoveHeart;
+        }
+        
+        private void OnDisable()
+        {
+            HammerCollision.HammerWasAttacked -= RemoveHeart;
+        }
+
+        public void RemoveHeart()
+        {
             _heartsCount--;
+            _hearts[_heartsCount].gameObject.SetActive(false);
+            if (_heartsCount == 0)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }

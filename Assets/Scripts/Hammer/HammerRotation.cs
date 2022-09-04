@@ -11,12 +11,12 @@ namespace Hammer
 
         private void OnEnable()
         {
-            RotationPanel.OnPointerDrag += Rotate;
+            RotationPanel.PointerDragged += Rotate;
         }
         
         private void OnDisable()
         {
-            RotationPanel.OnPointerDrag -= Rotate;
+            RotationPanel.PointerDragged -= Rotate;
         }
 
         private void Awake()

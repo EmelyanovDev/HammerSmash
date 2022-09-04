@@ -6,11 +6,11 @@ namespace UI
 {
     public class RotationPanel : MonoBehaviour, IDragHandler
     {
-        public static Action<Vector2> OnPointerDrag;
+        public static event Action<Vector2> PointerDragged;
         
         public void OnDrag(PointerEventData eventData)
         {
-            OnPointerDrag?.Invoke(eventData.delta);
+            PointerDragged?.Invoke(eventData.delta);
         }
     }
 }

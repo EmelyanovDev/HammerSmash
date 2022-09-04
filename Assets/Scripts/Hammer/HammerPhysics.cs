@@ -6,6 +6,7 @@ namespace Hammer
     
     public class HammerPhysics : MonoBehaviour
     {
+        [SerializeField] private float _pushingFromEnemyForce;
         [SerializeField] private Transform _centerOfMass;
 
         private Rigidbody _rigidbody;
@@ -21,6 +22,11 @@ namespace Hammer
             Gizmos.color = Color.red;
             if(_rigidbody)
                 Gizmos.DrawSphere(_rigidbody.worldCenterOfMass, 0.1f);
+        }
+
+        public void AddForce(Vector3 direction)
+        {
+            _rigidbody.AddForce(direction * _pushingFromEnemyForce);
         }
     }
 }
