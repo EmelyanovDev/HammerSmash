@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Hammer
 {
@@ -8,20 +7,22 @@ namespace Hammer
     public class HammerParticle : MonoBehaviour
     {
         private ParticleSystem _particle;
+        private HammerHandler _handler;
 
         private void Awake()
         {
             _particle = GetComponent<ParticleSystem>();
+            _handler = GetComponentInParent<HammerHandler>();
         }
 
         private void OnEnable()
         {
-            HammerCollision.HammerWasAttacked += PlayParticle;
+            _handler.HammerWasAttacked += PlayParticle;
         }
 
         private void OnDisable()
         {
-            HammerCollision.HammerWasAttacked -= PlayParticle;
+            _handler.HammerWasAttacked -= PlayParticle;
         }
 
         private void PlayParticle()

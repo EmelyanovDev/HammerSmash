@@ -9,6 +9,11 @@ namespace Hammer
         [SerializeField] private float _rotationSpeed;
         [SerializeField] private float _maxAngularVelocity;
 
+        private void Awake()
+        {
+            _hammerHinge.maxAngularVelocity = _maxAngularVelocity;
+        }
+        
         private void OnEnable()
         {
             RotationPanel.PointerDragged += Rotate;
@@ -18,12 +23,7 @@ namespace Hammer
         {
             RotationPanel.PointerDragged -= Rotate;
         }
-
-        private void Awake()
-        {
-            _hammerHinge.maxAngularVelocity = _maxAngularVelocity;
-        }
-
+        
         private void Rotate(Vector2 delta)
         {
             float rotation = delta.x * _rotationSpeed * Time.deltaTime;

@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -31,9 +30,12 @@ namespace Enemy
 
         private void SetNextPoint()
         {
+            if (_agent.enabled == false) return;
             var point = _wayPoints[_nextPointIndex];
             _agent.SetDestination(point.position);
             _nextPointIndex = ++_nextPointIndex % _wayPoints.Length;
         }
+
+        public void DeactivateAgent() => _agent.enabled = false;
     }
 }
