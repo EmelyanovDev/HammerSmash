@@ -9,24 +9,17 @@ namespace Hammer
     {
         private HammerPhysics _physics;
         
-        public event Action HammerWasAttacked;
-        
-        public static event Action HammerDie;
+        public event Action TookDamage;
 
         private void Awake()
         {
             _physics = GetComponent<HammerPhysics>();
         }
 
-        public void AttackHammer(Vector3 enemyPosition)
+        public void TakeDamage(Vector3 enemyPosition, float punchForce)
         {
-            HammerWasAttacked?.Invoke();
-            _physics.AddForce(transform.position - enemyPosition);
-        }
-
-        public void Die()
-        {
-            HammerDie?.Invoke();
+            TookDamage?.Invoke();
+            _physics.PushFromEnemy(enemyPosition, punchForce);
         }
     }
 }

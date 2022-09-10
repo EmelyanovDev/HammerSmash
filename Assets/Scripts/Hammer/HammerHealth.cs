@@ -5,13 +5,15 @@ namespace Hammer
 {
     [RequireComponent(typeof(HammerHandler))]
     
-    public class HammerHearts : MonoBehaviour
+    public class HammerHealth : MonoBehaviour
     {
         [SerializeField] private int _heartsCount;
 
         private HammerHandler _handler;
         
-        public static event Action<int> HeartsChanged;
+        public static event Action<int> HealthChanged;
+        
+        public static event Action HammerDie;
 
         private void Awake()
         {
@@ -20,20 +22,20 @@ namespace Hammer
 
         private void OnEnable()
         {
-            _handler.HammerWasAttacked += RemoveHeart;
+            _handler.TookDamage += RemoveHeart;
         }
         
         private void OnDisable()
         {
-            _handler.HammerWasAttacked -= RemoveHeart;
+            _handler.TookDamage -= RemoveHeart;
         }
 
         private void RemoveHeart()
         {
             _heartsCount--;
-            HeartsChanged?.Invoke(_heartsCount);
+            HealthChanged?.Invoke(_heartsCount);
             if (_heartsCount == 0)
-                _handler.Die();
+                HammerDie?.Invoke();
         }
     }
 }

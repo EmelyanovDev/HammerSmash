@@ -17,12 +17,12 @@ namespace Hammer
 
         private void OnEnable()
         {
-            _handler.HammerWasAttacked += PlayParticle;
+            _handler.TookDamage += PlayParticle;
         }
 
         private void OnDisable()
         {
-            _handler.HammerWasAttacked -= PlayParticle;
+            _handler.TookDamage -= PlayParticle;
         }
 
         private void PlayParticle()

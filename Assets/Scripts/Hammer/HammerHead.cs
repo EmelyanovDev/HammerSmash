@@ -8,11 +8,15 @@ namespace Hammer
     {
         private Rigidbody _rigidbody;
 
-        public float YVelocity => _rigidbody.velocity.y;
-
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
+        }
+
+        public void PushFromEnemy(Vector3 enemyPosition, float force)
+        {
+            Vector3 punch = transform.position - enemyPosition;
+            _rigidbody.AddForce(punch * force);
         }
     }
 }

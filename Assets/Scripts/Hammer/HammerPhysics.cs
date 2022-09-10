@@ -6,7 +6,6 @@ namespace Hammer
     
     public class HammerPhysics : MonoBehaviour
     {
-        [SerializeField] private float _pushingFromEnemyForce;
         [SerializeField] private Transform _centerOfMass;
 
         private Rigidbody _rigidbody;
@@ -24,9 +23,10 @@ namespace Hammer
                 Gizmos.DrawSphere(_rigidbody.worldCenterOfMass, 0.1f);
         }
 
-        public void AddForce(Vector3 direction)
+        public void PushFromEnemy(Vector3 enemyPosition, float force)
         {
-            _rigidbody.AddForce(direction * _pushingFromEnemyForce);
+            Vector3 punch = transform.position - enemyPosition;
+            _rigidbody.AddForce(punch * force);
         }
     }
 }

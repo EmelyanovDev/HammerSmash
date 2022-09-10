@@ -1,4 +1,5 @@
-﻿using Hammer;
+﻿using System.Linq;
+using Hammer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,17 +11,23 @@ namespace UI
 
         private void OnEnable()
         {
-            HammerHearts.HeartsChanged += DeactivateHeart;
+            HammerHealth.HealthChanged += RemoveHeart;
         }
         
         private void OnDisable()
         {
-            HammerHearts.HeartsChanged -= DeactivateHeart;
+            HammerHealth.HealthChanged -= RemoveHeart;
         }
 
-        private void DeactivateHeart(int heartsIndex)
+        private void RemoveHeart(int heartsIndex)
         {
             _hearts[heartsIndex].gameObject.SetActive(false);
+        }
+
+        private void AddHeart()
+        {
+            var heart = _hearts.FirstOrDefault(heart => heart.gameObject.activeSelf == false);
+            heart.gameObject.SetActive(true);
         }
     }
 }

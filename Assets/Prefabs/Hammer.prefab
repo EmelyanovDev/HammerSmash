@@ -146,7 +146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91e0290d7a5647bc9b91e2e81f4d9b48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pushingFromEnemyForce: 700
   _centerOfMass: {fileID: 7449373439216154761}
 --- !u!114 &648975022785740617
 MonoBehaviour:
@@ -189,8 +188,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2256532109236543389}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
-  m_LocalPosition: {x: 0, y: 0, z: -1.0915967}
-  m_LocalScale: {x: 84.04974, y: 84.04974, z: 84.04975}
+  m_LocalPosition: {x: -0.0000003812993, y: 0, z: -1.2261482}
+  m_LocalScale: {x: 61.24474, y: 61.24474, z: 61.244743}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5219547148392894945}
@@ -314,9 +313,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3548803448597574124}
-  m_LocalRotation: {x: 0.000000029802319, y: 0.000000029802319, z: 0.000000029802319, w: 1}
-  m_LocalPosition: {x: 0, y: -0.001018405, z: 0}
-  m_LocalScale: {x: 1.1897717, y: 1.3121991, z: 1.1897715}
+  m_LocalRotation: {x: 0.000000014901161, y: 0.000000014901161, z: 0.000000074505806, w: 1}
+  m_LocalPosition: {x: 0, y: -0.003594565, z: 0}
+  m_LocalScale: {x: 1.6327932, y: 1.8008077, z: 1.6327932}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8749773875101298500}

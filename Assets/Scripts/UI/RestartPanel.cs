@@ -7,13 +7,13 @@ namespace UI
     {
         private void Start()
         {
-            HammerHandler.HammerDie += () => gameObject.SetActive(true);
+            HammerHealth.HammerDie += () => gameObject.SetActive(true);
             gameObject.SetActive(false);
         }
 
         public void OnDestroy()
         {
-            HammerHandler.HammerDie -= () => gameObject.SetActive(true);
+            HammerHealth.HammerDie -= () => gameObject.SetActive(true);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Hammer;
+﻿using System;
+using Hammer;
 using UnityEngine;
 
 namespace Enemy
@@ -9,56 +10,51 @@ namespace Enemy
     public class EnemyHandler : MonoBehaviour
     {
         [SerializeField] private Collider[] _colliders;
-        [SerializeField] private int _heartsCount = 1;
-        [SerializeField] private float _destroyDelay = 0.5f;
-
-        private EnemyHead _head;
+        [SerializeField] private float _hammerPushForce;
+        [SerializeField] private float _dieDestroyDelay = 0.6f;
+        
         private EnemyAnimation _animation;
         private EnemyMovement _movement;
         private bool _isDie;
 
+        public event Action TookDamage;
+
         private void Awake()
         {
             _animation = GetComponent<EnemyAnimation>();
-            _head = GetComponentInChildren<EnemyHead>();
             _movement = GetComponent<EnemyMovement>();
         }
 
-        private void OnEnable()
+        private void Start()
         {
-            _head.HeadHit += ReduceHealth;
-        }
-        
-        private void OnDisable()
-        {
-            _head.HeadHit -= ReduceHealth;
-        }
-
-        private void ReduceHealth(float hammerVelocity)
-        {
-            _heartsCount--;
-            if(_heartsCount == 0)
-                Die();
+            if (_movement.HaveWayPoints == false)
+            {
+                _movement.DisableAgent();
+                _animation.DisableWalking();
+            }
         }
 
-        private void Die()
+        public void TakeDamage(HammerHead head)
+        {
+            head.PushFromEnemy(transform.position, _hammerPushForce);
+            TookDamage?.Invoke();
+        }
+
+        public void Die()
         {
             _isDie = true;
             foreach (var collider in _colliders)
                 collider.enabled = false;
-            _animation.PlayDieAnimation();
-            _movement.DeactivateAgent();
-            Destroy(gameObject, _destroyDelay);
+            _animation.PlayDie();
+            _movement.DisableAgent();
+            Destroy(gameObject, _dieDestroyDelay);
         }
 
-        private void OnCollisionEnter(Collision other)
+        public void AttackHammer(HammerHandler hammer)
         {
-            if (other.gameObject.TryGetComponent(out HammerHandler hammer))
-            {
-                if (_isDie) return;
-                hammer.AttackHammer(transform.position);
-                _animation.PlayPunchAnimation();
-            }
+            if (_isDie) return;
+            hammer.TakeDamage(transform.position, _hammerPushForce);
+            _animation.PlayPunch();
         }
     }
 }
