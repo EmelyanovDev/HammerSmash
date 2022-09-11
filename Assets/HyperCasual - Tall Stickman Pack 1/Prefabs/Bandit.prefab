@@ -975,7 +975,7 @@ MonoBehaviour:
   _colliders:
   - {fileID: 2083194051}
   - {fileID: 1954604508}
-  _hammerPushForce: 0
+  _hammerPunchForce: 500
   _dieDestroyDelay: 0.6
 --- !u!114 &362105567254518062
 MonoBehaviour:

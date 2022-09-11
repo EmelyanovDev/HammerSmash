@@ -13,7 +13,7 @@ namespace Hammer
         
         public static event Action<int> HealthChanged;
         
-        public static event Action HammerDie;
+        public static event Action HammerDied;
 
         private void Awake()
         {
@@ -35,7 +35,7 @@ namespace Hammer
             _heartsCount--;
             HealthChanged?.Invoke(_heartsCount);
             if (_heartsCount == 0)
-                HammerDie?.Invoke();
+                HammerDied?.Invoke();
         }
     }
 }

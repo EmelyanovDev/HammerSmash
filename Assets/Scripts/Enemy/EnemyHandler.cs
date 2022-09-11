@@ -10,7 +10,7 @@ namespace Enemy
     public class EnemyHandler : MonoBehaviour
     {
         [SerializeField] private Collider[] _colliders;
-        [SerializeField] private float _hammerPushForce;
+        [SerializeField] private float _hammerPunchForce;
         [SerializeField] private float _dieDestroyDelay = 0.6f;
         
         private EnemyAnimation _animation;
@@ -36,7 +36,7 @@ namespace Enemy
 
         public void TakeDamage(HammerHead head)
         {
-            head.PushFromEnemy(transform.position, _hammerPushForce);
+            head.PushFromEnemy(transform.position);
             TookDamage?.Invoke();
         }
 
@@ -53,7 +53,7 @@ namespace Enemy
         public void AttackHammer(HammerHandler hammer)
         {
             if (_isDie) return;
-            hammer.TakeDamage(transform.position, _hammerPushForce);
+            hammer.TakeDamage(transform.position, _hammerPunchForce);
             _animation.PlayPunch();
         }
     }

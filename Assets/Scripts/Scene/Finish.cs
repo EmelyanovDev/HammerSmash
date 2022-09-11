@@ -1,19 +1,18 @@
 using System;
-using Hammer;
 using UnityEngine;
 
 namespace Scene
 {
     public class Finish : MonoBehaviour
     {
+        [SerializeField] private int _hammerLayer;
+        
         public static event Action LevelFinished;
 
-        private void OnCollisionEnter(Collision other)
+        private void OnTriggerEnter(Collider other)
         {
-            print("A");
-            if (other.gameObject.TryGetComponent(out HammerHandler hammer))
+            if (other.gameObject.layer == _hammerLayer)
             {
-                print("B");
                 LevelFinished?.Invoke();
             }
         }
