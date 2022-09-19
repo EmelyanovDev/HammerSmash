@@ -16,7 +16,9 @@ GameObject:
   - component: {fileID: 7449373440573896182}
   - component: {fileID: 648975022785740616}
   - component: {fileID: 648975022785740617}
-  m_Layer: 0
+  - component: {fileID: 7449373439051577253}
+  - component: {fileID: 7449373439051577261}
+  m_Layer: 6
   m_Name: Hinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +99,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648975022785740618}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -159,6 +161,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866f253a132b4bdeadf558740cc8cdba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7449373439051577253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648975022785740618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3817cf96738a8624fba33240a4b1c31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _heartsCount: 3
+--- !u!114 &7449373439051577261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648975022785740618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e342f77959674a4c947fe2e4c40c97e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gravityAddition: -5
 --- !u!1 &2256532109236543389
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,7 +201,7 @@ GameObject:
   - component: {fileID: 7449373439203724485}
   - component: {fileID: 7449373439203724486}
   - component: {fileID: 2256532109236543388}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +281,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2256532109236543389}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -271,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331f6c753b85b47418c236a4d7755ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyBounciness: 300
 --- !u!54 &2256532109236543388
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -286,7 +315,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 8
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!1 &3548803448597574124
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +328,7 @@ GameObject:
   - component: {fileID: 34981974220618132}
   - component: {fileID: 6032116918047785616}
   - component: {fileID: 7449373439203724487}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +407,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3548803448597574124}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -608,7 +637,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.6313726, g: 0.37254903, b: 0.17254902, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -670,7 +699,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5146,7 +5175,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5250,7 +5279,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6983892052656958248}
   - component: {fileID: 7449373440573896183}
-  m_Layer: 0
+  - component: {fileID: 7427661141930645335}
+  m_Layer: 6
   m_Name: Hammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5264,7 +5294,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7755221086760530322}
-  m_LocalRotation: {x: -0, y: -0.70710576, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.54819536, y: 4.125, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5287,5 +5317,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hammerHinge: {fileID: 7449373440573896181}
-  _rotationSpeed: 1000
+  _rotationSpeed: 300
   _maxAngularVelocity: 500
+--- !u!114 &7427661141930645335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7755221086760530322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32e7069b06a448b798d55296be1e8493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hingeRenderer: {fileID: 0}
+  _stickRenderer: {fileID: 0}
+  _headRenderer: {fileID: 0}

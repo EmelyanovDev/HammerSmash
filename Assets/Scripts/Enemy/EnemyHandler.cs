@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Hammer;
 using UnityEngine;
 
@@ -11,7 +12,8 @@ namespace Enemy
     {
         [SerializeField] private Collider[] _colliders;
         [SerializeField] private float _hammerPunchForce;
-        [SerializeField] private float _dieDestroyDelay = 0.6f;
+        [SerializeField] private float _dyingDestroyDelay = 0.6f;
+        [SerializeField] private float _takingDamageTime = 0.5f;
         
         private EnemyAnimation _animation;
         private EnemyMovement _movement;
@@ -29,25 +31,34 @@ namespace Enemy
         {
             if (_movement.HaveWayPoints == false)
             {
-                _movement.DisableAgent();
+                _movement.TurnAgent(false);
                 _animation.DisableWalking();
             }
         }
 
         public void TakeDamage(HammerHead head)
         {
+            //play takeDamage sound
+            _animation.PlayDizzy();
+            _movement.DisableAgentForSeconds(_takingDamageTime);
             head.PushFromEnemy(transform.position);
             TookDamage?.Invoke();
         }
 
         public void Die()
         {
+            //play die sound
             _isDie = true;
-            foreach (var collider in _colliders)
-                collider.enabled = false;
             _animation.PlayDie();
-            _movement.DisableAgent();
-            Destroy(gameObject, _dieDestroyDelay);
+            _movement.TurnAgent(false);
+            TurnColliders(false);
+            Destroy(gameObject, _dyingDestroyDelay);
+        }
+
+        private void TurnColliders(bool condition)
+        {
+            foreach (var collider in _colliders)
+                collider.enabled = condition;
         }
 
         public void AttackHammer(HammerHandler hammer)

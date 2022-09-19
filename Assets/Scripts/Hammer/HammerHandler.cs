@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Utilities;
 
 namespace Hammer
 {
@@ -19,6 +20,7 @@ namespace Hammer
         public void TakeDamage(Vector3 enemyPosition, float punchForce)
         {
             TookDamage?.Invoke();
+            PhoneVibration.Vibrate();
             _physics.PushFromEnemy(enemyPosition, punchForce);
         }
     }

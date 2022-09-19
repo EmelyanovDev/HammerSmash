@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Utilities
+namespace Physics
 {
     [RequireComponent(typeof(Rigidbody))]
     

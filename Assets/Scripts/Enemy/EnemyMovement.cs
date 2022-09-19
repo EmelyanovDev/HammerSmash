@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -38,6 +39,19 @@ namespace Enemy
             _nextPointIndex = ++_nextPointIndex % _wayPoints.Length;
         }
 
-        public void DisableAgent() => _agent.enabled = false;
+        private IEnumerator DisableAgent(float time)
+        {
+            _agent.enabled = false;
+            yield return new WaitForSeconds(time);
+            _agent.enabled = true;
+        }
+
+        public void DisableAgentForSeconds(float time)
+        {
+            if(HaveWayPoints) 
+                StartCoroutine(DisableAgent(time));
+        }
+
+        public void TurnAgent(bool condition) => _agent.enabled = condition;
     }
 }
