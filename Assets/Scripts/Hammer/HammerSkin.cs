@@ -1,4 +1,5 @@
-﻿using Skins;
+﻿using Save;
+using Skins;
 using UnityEngine;
 
 namespace Hammer
@@ -16,6 +17,20 @@ namespace Hammer
         {
             _stickFilter = _handleRenderer.gameObject.GetComponent<MeshFilter>();
             _headFilter = _headRenderer.gameObject.GetComponent<MeshFilter>();
+            LoadSkin();
+        }
+
+        private void LoadSkin()
+        {
+            if(JsonSave.LoadData().HammerSkinProduct != null)
+                ChangeSkin(JsonSave.LoadData().HammerSkinProduct as HammerSkinProduct);
+        }
+
+        private void SaveSKin(HammerSkinProduct skin)
+        {
+            var data = JsonSave.LoadData();
+            data.HammerSkinProduct = skin;
+            JsonSave.SaveData(data);
         }
 
         public void ChangeSkin(HammerSkinProduct skin)
@@ -25,6 +40,7 @@ namespace Hammer
             _headRenderer.sharedMaterial = skin.HammerHeadMaterial;
             _stickFilter.sharedMesh = skin.HammerStick;
             _headFilter.sharedMesh = skin.HammerHead;
+            SaveSKin(skin);
         }
     }
 }

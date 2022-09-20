@@ -11,7 +11,7 @@ namespace Shop
         [SerializeField] private ProductHandler _productTemplate;
         [SerializeField] private Transform _productsContainer;
 
-        private List<ProductHandler> _handlers = new List<ProductHandler>();
+        [SerializeField] private List<ProductHandler> _handlers = new List<ProductHandler>();
         
         public static event Action<Product> ProductActivated;
 

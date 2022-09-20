@@ -8,8 +8,6 @@ namespace Skins
     {
         [SerializeField] private HammerSkin _hammerSkin;
 
-        private const string SkinKey = "SkinKey";
-        
         private void OnEnable()
         {
             ProductsList.ProductActivated += SetSkin;
@@ -22,7 +20,6 @@ namespace Skins
 
         private void SetSkin(Product product)
         {
-            PlayerPrefs.SetString(SkinKey, product.name);
             switch (product.ProductType)
             {
                 case ProductType.HammerSkin:

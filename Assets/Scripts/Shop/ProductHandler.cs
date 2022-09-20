@@ -36,6 +36,7 @@ namespace Shop
             _view.Init(product);
             _button.Init(this);
             _selfProduct = product;
+            OnEnable();
         }
 
         public void Click()

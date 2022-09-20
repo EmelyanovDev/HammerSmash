@@ -8,6 +8,6 @@ namespace Save
     
     public class SaveData
     {
-        public List<Product> BoughtProducts;
+        public Product HammerSkinProduct;
     }
 }

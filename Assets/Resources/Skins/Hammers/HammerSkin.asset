@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d4109a8d21624533823c06b971da7b1d, type: 3}
-  m_Name: HammerSkin1
+  m_Name: HammerSkin
   m_EditorClassIdentifier: 
   _icon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
   _price: 10
