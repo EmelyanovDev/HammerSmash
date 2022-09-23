@@ -6,7 +6,7 @@ namespace UI
 {
     public class RotationPanel : MonoBehaviour, IDragHandler
     {
-        [SerializeField] private float _screensXRatio;
+        private float _screensXRatio;
 
         private float _defaultScreenWidth = 1920f;
             
