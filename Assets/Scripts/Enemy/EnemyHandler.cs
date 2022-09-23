@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Hammer;
 using UnityEngine;
 
@@ -11,14 +10,15 @@ namespace Enemy
     public class EnemyHandler : MonoBehaviour
     {
         [SerializeField] private Collider[] _colliders;
-        [SerializeField] private float _hammerPunchForce;
+        [SerializeField] private float _attackPunchForce;
         [SerializeField] private float _dyingDestroyDelay = 0.6f;
         [SerializeField] private float _takingDamageTime = 0.5f;
+        [SerializeField] private int _damageCount;
         
         private EnemyAnimation _animation;
         private EnemyMovement _movement;
         private bool _isDie;
-
+        
         public event Action TookDamage;
 
         private void Awake()
@@ -64,7 +64,7 @@ namespace Enemy
         public void AttackHammer(HammerHandler hammer)
         {
             if (_isDie) return;
-            hammer.TakeDamage(transform.position, _hammerPunchForce);
+            hammer.TakeDamage(transform.position, _attackPunchForce, _damageCount);
             _animation.PlayPunch();
         }
     }

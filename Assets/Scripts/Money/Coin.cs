@@ -5,9 +5,9 @@ namespace Money
 {
     public class Coin : MonoBehaviour
     {
-        [SerializeField] private int _hammerLayer;
         [SerializeField] private int _takingDestroyDelay;
 
+        private int _hammerLayer = 6;
         private bool _isPicked;
         
         public event Action CoinPicked;

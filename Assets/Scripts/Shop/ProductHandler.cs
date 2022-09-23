@@ -23,7 +23,8 @@ namespace Shop
 
         private void OnEnable()
         {
-            _selfProduct.ProductBought += _view.DeactivatePriceText;
+            if(_selfProduct != null)
+                _selfProduct.ProductBought += _view.DeactivatePriceText;
         }
         
         private void OnDisable()
@@ -33,9 +34,9 @@ namespace Shop
 
         public void Init(Product product)
         {
+            _selfProduct = product;
             _view.Init(product);
             _button.Init(this);
-            _selfProduct = product;
             OnEnable();
         }
 

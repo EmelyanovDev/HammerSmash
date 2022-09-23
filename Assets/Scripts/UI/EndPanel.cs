@@ -15,13 +15,13 @@ namespace UI
         
         private void Start()
         {
-            HammerHealth.HammerDied += RestartLevel;
+            HammerHandler.HammerDied += RestartLevel;
             Finish.LevelFinished += NextLevel;
         }
 
         private void OnDestroy()
         {
-            HammerHealth.HammerDied -= RestartLevel;
+            HammerHandler.HammerDied -= RestartLevel;
             Finish.LevelFinished -= NextLevel;
         }
         

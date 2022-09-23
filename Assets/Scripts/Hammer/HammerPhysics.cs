@@ -28,5 +28,10 @@ namespace Hammer
             Vector3 punch = transform.position - enemyPosition;
             _rigidbody.AddForce(punch * force);
         }
+
+        public void SwitchPhysics(bool condition)
+        {
+            _rigidbody.isKinematic = condition;
+        }
     }
 }

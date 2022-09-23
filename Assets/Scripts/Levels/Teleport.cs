@@ -1,20 +1,17 @@
-using System;
 using UnityEngine;
 
-namespace Scene
+namespace Levels
 {
-    public class Finish : MonoBehaviour
+    public class Teleport : MonoBehaviour
     {
+        [SerializeField] private Transform _teleportPoint;
+        
         private int _hammerLayer = 6;
         
-        public static event Action LevelFinished;
-
         private void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.layer == _hammerLayer)
-            {
-                LevelFinished?.Invoke();
-            }
+                other.transform.position = _teleportPoint.position;
         }
     }
 }

@@ -6,8 +6,9 @@ namespace Hammer
     
     public class HammerHead : MonoBehaviour
     {
+        [SerializeField] private HammerHandler _handler;
         [SerializeField] private float _enemyBounciness;
-        
+
         private Rigidbody _rigidbody;
 
         private void Awake()
@@ -19,6 +20,12 @@ namespace Hammer
         {
             Vector3 punch = transform.position - enemyPosition;
             _rigidbody.AddForce(punch * _enemyBounciness);
+        }
+
+        public void Hook(bool condition)
+        {
+            _handler.ChangeHookCondition(condition);
+            _rigidbody.isKinematic = condition;
         }
     }
 }

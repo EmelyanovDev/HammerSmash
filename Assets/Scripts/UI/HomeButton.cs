@@ -8,13 +8,13 @@ namespace UI
         private void OnEnable()
         {
             Finish.LevelFinished += () => gameObject.SetActive(false);
-            HammerHealth.HammerDied += () => gameObject.SetActive(false);
+            HammerHandler.HammerDied += () => gameObject.SetActive(false);
         }
         
         private void OnDisable()
         {
             Finish.LevelFinished -= () => gameObject.SetActive(false);
-            HammerHealth.HammerDied -= () => gameObject.SetActive(false);
+            HammerHandler.HammerDied -= () => gameObject.SetActive(false);
         }
     }
 }

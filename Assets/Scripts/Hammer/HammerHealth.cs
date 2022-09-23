@@ -12,8 +12,6 @@ namespace Hammer
         private HammerHandler _handler;
         
         public static event Action<int> HealthChanged;
-        
-        public static event Action HammerDied;
 
         private void Awake()
         {
@@ -30,12 +28,13 @@ namespace Hammer
             _handler.TookDamage -= RemoveHeart;
         }
 
-        private void RemoveHeart()
+        private void RemoveHeart(int damageCount)
         {
-            _heartsCount--;
+            print("A");
+            _heartsCount -= damageCount;
             HealthChanged?.Invoke(_heartsCount);
-            if (_heartsCount == 0)
-                HammerDied?.Invoke();
+            if (_heartsCount <= 0)
+                _handler.Die();
         }
     }
 }

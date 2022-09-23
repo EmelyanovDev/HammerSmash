@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Utilities
 {
@@ -8,17 +7,6 @@ namespace Utilities
         public static void Vibrate()
         {
             Handheld.Vibrate();
-        }
-
-        private static IEnumerator VibrateForTime(float time)
-        {
-            float currentTime = time;
-            while (currentTime > 0)
-            {
-                Handheld.Vibrate();
-                currentTime -= Time.deltaTime;
-                yield return new WaitForEndOfFrame();
-            }
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Levels
 
         private void FixedUpdate()
         {
-            float speed = _movingSpeed * Time.fixedDeltaTime;
+            float speed = _movingSpeed * Time.fixedDeltaTime;   
             transform.position = Vector3.MoveTowards(transform.position, _movingPoints[_currentPointIndex].position, speed);
             if(transform.position == _movingPoints[_currentPointIndex].position)
                 _currentPointIndex = ++_currentPointIndex % _movingPoints.Length;

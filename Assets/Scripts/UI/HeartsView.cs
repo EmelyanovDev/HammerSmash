@@ -19,9 +19,10 @@ namespace UI
             HammerHealth.HealthChanged -= RemoveHeart;
         }
 
-        private void RemoveHeart(int heartsIndex)
+        private void RemoveHeart(int heartCount)
         {
-            _hearts[heartsIndex].gameObject.SetActive(false);
+            for (int i = _hearts.Length - 1; i >= Mathf.Max(0,heartCount); i--)
+                _hearts[i].gameObject.SetActive(false);
         }
 
         private void AddHeart()

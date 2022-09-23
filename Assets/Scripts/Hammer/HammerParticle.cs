@@ -25,7 +25,7 @@ namespace Hammer
             _handler.TookDamage -= PlayParticle;
         }
 
-        private void PlayParticle()
+        private void PlayParticle(int heartsCount)
         {
             _particle.Play();
         }

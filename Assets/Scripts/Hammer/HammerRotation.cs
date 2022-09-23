@@ -24,9 +24,9 @@ namespace Hammer
             RotationPanel.PointerDragged -= Rotate;
         }
         
-        private void Rotate(float axis)
+        private void Rotate(float xDelta)
         {
-            float rotation = axis * _rotationSpeed * Time.deltaTime;
+            float rotation = xDelta * _rotationSpeed * Time.deltaTime;
             _hammerHinge.AddRelativeTorque(0, 0,rotation);
         }
     }
