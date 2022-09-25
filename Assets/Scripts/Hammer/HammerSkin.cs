@@ -26,7 +26,7 @@ namespace Hammer
                 ChangeSkin(JsonSave.LoadData().HammerSkinProduct as HammerSkinProduct);
         }
 
-        private void SaveSKin(HammerSkinProduct skin)
+        private void SaveSkin(HammerSkinProduct skin)
         {
             var data = JsonSave.LoadData();
             data.HammerSkinProduct = skin;
@@ -40,7 +40,7 @@ namespace Hammer
             _headRenderer.sharedMaterial = skin.HammerHeadMaterial;
             _stickFilter.sharedMesh = skin.HammerStick;
             _headFilter.sharedMesh = skin.HammerHead;
-            SaveSKin(skin);
+            SaveSkin(skin);
         }
     }
 }
