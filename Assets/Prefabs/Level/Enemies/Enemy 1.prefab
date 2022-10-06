@@ -355,7 +355,7 @@ MonoBehaviour:
   _colliders:
   - {fileID: 7640530174736359693}
   - {fileID: 7640530174865014802}
-  _attackPunchForce: 300
+  _attackPunchForce: 500
   _dyingDestroyDelay: 0.6
   _takingDamageTime: 0.5
   _damageCount: 1
