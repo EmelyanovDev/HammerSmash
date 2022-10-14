@@ -355,7 +355,7 @@ MonoBehaviour:
   _colliders:
   - {fileID: 7640530174736359693}
   - {fileID: 7640530174865014802}
-  _attackPunchForce: 300
+  _attackPunchForce: 450
   _dyingDestroyDelay: 0.6
   _takingDamageTime: 0.5
   _damageCount: 1
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9929370783401680a4d440f3f0ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heartsCount: 1
+  _heartsCount: 4
 --- !u!114 &9197850136923619090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 7111323125367114265}
   - component: {fileID: 1356155427713324910}
   m_Layer: 0
-  m_Name: bandit
+  m_Name: viking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -526,7 +526,7 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: -9009122783502730950, guid: a6b3d9fea8f09734bbde3c62624b9c87, type: 3}
+  m_Mesh: {fileID: -7849127435017385391, guid: e8c6bdaeab5b9e143b830fde0d5c9d49, type: 3}
   m_Bones:
   - {fileID: 3229735959157093468}
   - {fileID: 7013289090508489062}
