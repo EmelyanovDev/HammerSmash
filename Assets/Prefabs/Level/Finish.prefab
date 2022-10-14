@@ -110,6 +110,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 676db6506a021364181ee751e8aa9f28, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c94bd877965b94540a02be56d7285c39, type: 2}
+    - target: {fileID: -5754084199372789682, guid: 676db6506a021364181ee751e8aa9f28, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8999911773206952699, guid: 67a283ada6f4c584e85835b1922a8d99, type: 3}
     - target: {fileID: 919132149155446097, guid: 676db6506a021364181ee751e8aa9f28, type: 3}
       propertyPath: m_Name
       value: portal
