@@ -597,10 +597,6 @@ PrefabInstance:
       value: MovingPlatform
       objectReference: {fileID: 0}
     - target: {fileID: 8659215195308435203, guid: 360880075e1f02c43a3358204316b32e, type: 3}
-      propertyPath: _stayDelay
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8659215195308435203, guid: 360880075e1f02c43a3358204316b32e, type: 3}
       propertyPath: _movingPoints.Array.data[0]
       value: 
       objectReference: {fileID: 1908499533}
@@ -618,7 +614,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8659215195308435215, guid: 360880075e1f02c43a3358204316b32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 27
+      value: 26.5
       objectReference: {fileID: 0}
     - target: {fileID: 8659215195308435215, guid: 360880075e1f02c43a3358204316b32e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1847,7 +1843,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1138120156
@@ -1973,7 +1969,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1175100408}
   m_HandleRect: {fileID: 1175100407}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -3017,7 +3013,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908499532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.25, y: 27, z: 0}
+  m_LocalPosition: {x: 113.75, y: 27, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
