@@ -1,9 +1,10 @@
-using System;
 using System.Collections;
 using UnityEngine;
 
 namespace Levels
 {
+    [RequireComponent(typeof(Rigidbody))]
+    
     public class MovingPlatform : MonoBehaviour
     {
         [SerializeField] private Transform[] _movingPoints;
@@ -11,6 +12,12 @@ namespace Levels
         [SerializeField] private float _stayDelay;
 
         private int _currentPointIndex;
+        private Rigidbody _rigidbody;
+
+        private void Awake()
+        {
+            _rigidbody = GetComponent<Rigidbody>();
+        }
 
         private void Start()
         {
@@ -22,8 +29,9 @@ namespace Levels
             while (transform.position != _movingPoints[_currentPointIndex].position)
             {
                 float speed = _movingSpeed * Time.fixedDeltaTime;
-                Vector3 pointPosition = _movingPoints[_currentPointIndex].position;
-                transform.position = Vector3.MoveTowards(transform.position, pointPosition, speed);
+                Vector3 point = _movingPoints[_currentPointIndex].position;
+                Vector3 target = Vector3.MoveTowards(transform.position, point, speed);
+                _rigidbody.MovePosition(target);
                 yield return new WaitForFixedUpdate();
             }
             _currentPointIndex = ++_currentPointIndex % _movingPoints.Length;
