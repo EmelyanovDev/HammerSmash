@@ -355,10 +355,10 @@ MonoBehaviour:
   _colliders:
   - {fileID: 7640530174736359693}
   - {fileID: 7640530174865014802}
-  _attackPunchForce: 300
+  _attackPunchForce: 500
   _dyingDestroyDelay: 0.6
   _takingDamageTime: 0.5
-  _damageCount: 1
+  _damageCount: 2
 --- !u!114 &8002589423107505376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9929370783401680a4d440f3f0ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heartsCount: 1
+  _heartsCount: 5
 --- !u!114 &9197850136923619090
 MonoBehaviour:
   m_ObjectHideFlags: 0
