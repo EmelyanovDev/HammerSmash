@@ -5318,7 +5318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hammerHinge: {fileID: 7449373440573896181}
-  _rotationSpeed: 1000
+  _rotationSpeed: 950
   _maxAngularVelocity: 500
 --- !u!114 &7427661141930645335
 MonoBehaviour:
