@@ -99,7 +99,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 648975022785740618}
-  m_Material: {fileID: 13400000, guid: 80cd6b320377d5b4e93a51e4a599ef5d, type: 2}
+  m_Material: {fileID: 13400000, guid: f54a0a773a50cec4e9922b0253690d2d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331f6c753b85b47418c236a4d7755ffe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _handler: {fileID: 0}
   _enemyBounciness: 300
 --- !u!54 &2256532109236543388
 Rigidbody:
@@ -5317,7 +5318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hammerHinge: {fileID: 7449373440573896181}
-  _rotationSpeed: 300
+  _rotationSpeed: 950
   _maxAngularVelocity: 500
 --- !u!114 &7427661141930645335
 MonoBehaviour:
@@ -5332,5 +5333,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hingeRenderer: {fileID: 0}
-  _stickRenderer: {fileID: 0}
+  _handleRenderer: {fileID: 0}
   _headRenderer: {fileID: 0}

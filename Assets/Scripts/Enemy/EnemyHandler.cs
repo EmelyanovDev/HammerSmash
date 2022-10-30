@@ -1,6 +1,7 @@
 ﻿using System;
 using Hammer;
 using UnityEngine;
+using Audio;
 
 namespace Enemy
 {
@@ -47,7 +48,7 @@ namespace Enemy
 
         public void Die()
         {
-            //play die sound
+            SoundEffects._instance.PlayEnemyDieSound();
             _isDie = true;
             _animation.PlayDie();
             _movement.TurnAgent(false);
@@ -66,6 +67,7 @@ namespace Enemy
             if (_isDie) return;
             hammer.TakeDamage(transform.position, _attackPunchForce, _damageCount);
             _animation.PlayPunch();
+            SoundEffects._instance.PlayEnemyAttackSound();
         }
     }
 }
