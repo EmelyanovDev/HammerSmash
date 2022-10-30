@@ -6,7 +6,7 @@ namespace Levels
     public class Booster : MonoBehaviour
     {
         [SerializeField] private float _pushForce;
-
+        
         private void OnTriggerStay(Collider other)
         {
             if(other.gameObject.TryGetComponent(out Rigidbody rigidbody))
