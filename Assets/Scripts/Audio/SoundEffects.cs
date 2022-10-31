@@ -32,8 +32,16 @@ namespace Audio
     
         private void PlayOneShot(AudioClip clip) => _audioSource.PlayOneShot(clip);
 
-        [SerializeField] private AudioClip _enemyAttackSound, _enemyDieSound;
+        [SerializeField] private AudioClip _enemyAttackSound, _enemyDieSound, _enemyTakeDamageSound;
         public void PlayEnemyAttackSound() => PlayOneShot(_enemyAttackSound);
         public void PlayEnemyDieSound() => PlayOneShot(_enemyDieSound);
+        public void PlayEnemyTakeDamageSound() => PlayOneShot(_enemyTakeDamageSound);
+        
+        [SerializeField] private AudioClip _coinTakeSound;
+        public void PlayCoinTakeSound() => PlayOneShot(_coinTakeSound);
+
+        [SerializeField] private AudioClip _purchaseSucceededSound, _purchaseFailSound;
+        public void PlayPurshaseSucceededSound() => PlayOneShot(_purchaseSucceededSound);
+        public void PlayPurshaseFailSound() => PlayOneShot(_purchaseFailSound);
     }
 }

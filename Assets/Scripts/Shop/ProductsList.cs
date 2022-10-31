@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Money;
 using UnityEngine;
+using Audio;
 
 namespace Shop
 {
@@ -52,9 +53,10 @@ namespace Shop
             {
                 product.Buy();
                 ProductActivated?.Invoke(product);
+                SoundEffects._instance.PlayPurshaseSucceededSound();
             }
-            //else
-                //Play buy failed sound
+            else
+                SoundEffects._instance.PlayPurshaseFailSound();
         }
     }
 }
