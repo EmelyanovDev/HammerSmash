@@ -46,7 +46,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyAttackSound: {fileID: 8300000, guid: 792925ba7cf81bf43b4565c048734d9f, type: 3}
-  _enemyDieSound: {fileID: 8300000, guid: 5d1f9df17558935468eb56f0b5df5a4f, type: 3}
+  _enemyDieSound: {fileID: 8300000, guid: 85d8bca13b9fb0b4898d71e341ca93fb, type: 3}
+  _enemyTakeDamageSound: {fileID: 8300000, guid: 252890b3f040192439f365205c1a8227, type: 3}
+  _coinTakeSound: {fileID: 8300000, guid: 86a610b5115233443b6bbf3cbd70bd10, type: 3}
+  _purchaseSucceededSound: {fileID: 8300000, guid: 79bf73ee423648c4896bf70f5fb682e8, type: 3}
+  _purchaseFailSound: {fileID: 8300000, guid: b80e59e77e3af5d44947313f87c8a2e8, type: 3}
 --- !u!82 &6529808393087590099
 AudioSource:
   m_ObjectHideFlags: 0
