@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 32e981255b5e7e741ab1dba7fc850fab
+guid: 9781316bb2030824d9f7442b97a4c252
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Inkulinati 210706
+  - Press Start 2P
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
