@@ -39,7 +39,7 @@ namespace Enemy
 
         public void TakeDamage(HammerHead head)
         {
-            //play takeDamage sound
+            SoundEffects._instance.PlayEnemyTakeDamageSound();
             _animation.PlayDizzy();
             _movement.DisableAgentForSeconds(_takingDamageTime);
             head.PushFromEnemy(transform.position);
