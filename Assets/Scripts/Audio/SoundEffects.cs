@@ -18,17 +18,17 @@ namespace Audio
         }
 
         private void Singleton()
+        {
+            if (_instance == null)
             {
-                if (_instance == null)
-                {
-                    _instance = this;
-                    DontDestroyOnLoad(gameObject);
-                }
-                else
-                {
-                    Destroy(gameObject);
-                }
+                _instance = this;
+                DontDestroyOnLoad(gameObject);
             }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
     
         private void PlayOneShot(AudioClip clip) => _audioSource.PlayOneShot(clip);
 
