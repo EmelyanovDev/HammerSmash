@@ -173,7 +173,7 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.006378799
-  m_Center: {x: 5.016144e-16, y: 0.005770473, z: -0.0004000002}
+  m_Center: {x: 5.016144e-16, y: 0.004770473, z: -0.0004000002}
 --- !u!114 &7640530174865014803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,7 +249,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135023294164410132}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0.0000029504295}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 3.9999993, y: 0.5, z: 0}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1.1}
   m_ConstrainProportionsScale: 0
@@ -327,7 +327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 219577a091f2ed241b3d8dd440b99475, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _wayPoints: []
+  _wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &7640530174736359690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -355,8 +357,11 @@ MonoBehaviour:
   _colliders:
   - {fileID: 7640530174736359693}
   - {fileID: 7640530174865014802}
-  _hammerPunchForce: 500
-  _dieDestroyDelay: 0.6
+  _attackPunchForce: 500
+  _dyingDestroyDelay: 0.6
+  _takingDamageTime: 0.5
+  _damageCount: 1
+  _coinsCount: 1
 --- !u!114 &8002589423107505376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369,7 +374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e9929370783401680a4d440f3f0ec5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _heartsCount: 1
+  _heartsCount: 2
 --- !u!114 &9197850136923619090
 MonoBehaviour:
   m_ObjectHideFlags: 0

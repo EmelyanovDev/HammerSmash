@@ -53,10 +53,10 @@ namespace Shop
             {
                 product.Buy();
                 ProductActivated?.Invoke(product);
-                SoundEffects._instance.PlayPurshaseSucceededSound();
+                SoundEffects.Instance.PlayPurshaseSucceededSound();
             }
             else
-                SoundEffects._instance.PlayPurshaseFailSound();
+                SoundEffects.Instance.PlayPurshaseFailSound();
         }
     }
 }
