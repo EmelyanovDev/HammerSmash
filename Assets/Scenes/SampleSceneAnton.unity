@@ -307,7 +307,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fdf553ae752fbad4caad17dfef32e8a6, type: 2}
   _productTemplate: {fileID: 3505142697168781851, guid: ff59b2f263a599f49b10ec976c6dd41f, type: 3}
   _productsContainer: {fileID: 1138120155}
-  _handlers: []
 --- !u!1 &532421576
 GameObject:
   m_ObjectHideFlags: 0
@@ -2449,6 +2448,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1138120155, guid: 4cc168787b6310c408ea4d43411fef18, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1474403098, guid: 4cc168787b6310c408ea4d43411fef18, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1670218925, guid: 4cc168787b6310c408ea4d43411fef18, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1874672534, guid: 4cc168787b6310c408ea4d43411fef18, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3927713937061418945, guid: 4cc168787b6310c408ea4d43411fef18, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2803,6 +2818,10 @@ PrefabInstance:
     - target: {fileID: 2135023294164410132, guid: 5f0ff6b9093a24c4b85769659a11d914, type: 3}
       propertyPath: m_Name
       value: Bandit
+      objectReference: {fileID: 0}
+    - target: {fileID: 2135023294164410132, guid: 5f0ff6b9093a24c4b85769659a11d914, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3168978909145099527, guid: 5f0ff6b9093a24c4b85769659a11d914, type: 3}
       propertyPath: m_RootOrder

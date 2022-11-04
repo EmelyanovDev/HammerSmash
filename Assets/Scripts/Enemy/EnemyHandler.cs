@@ -2,6 +2,7 @@
 using Hammer;
 using UnityEngine;
 using Audio;
+using Money;
 
 namespace Enemy
 {
@@ -15,6 +16,7 @@ namespace Enemy
         [SerializeField] private float _dyingDestroyDelay = 0.6f;
         [SerializeField] private float _takingDamageTime = 0.5f;
         [SerializeField] private int _damageCount;
+        [SerializeField] private int _coinsCount;
         
         private EnemyAnimation _animation;
         private EnemyMovement _movement;
@@ -39,27 +41,29 @@ namespace Enemy
 
         public void TakeDamage(HammerHead head)
         {
-            SoundEffects._instance.PlayEnemyTakeDamageSound();
             _animation.PlayDizzy();
             _movement.DisableAgentForSeconds(_takingDamageTime);
             head.PushFromEnemy(transform.position);
             TookDamage?.Invoke();
+            SoundEffects.Instance.PlayEnemyTakeDamageSound();
         }
 
         public void Die()
         {
-            SoundEffects._instance.PlayEnemyDieSound();
+            Wallet.ChangeMoneyCount(_coinsCount);
             _isDie = true;
             _animation.PlayDie();
             _movement.TurnAgent(false);
-            TurnColliders(false);
+            SwitchColliders(false);
             Destroy(gameObject, _dyingDestroyDelay);
+            SoundEffects.Instance.PlayEnemyDieSound();
+
         }
 
-        private void TurnColliders(bool condition)
+        private void SwitchColliders(bool condition)
         {
-            foreach (var collider in _colliders)
-                collider.enabled = condition;
+            foreach (var col in _colliders)
+                col.enabled = condition;
         }
 
         public void AttackHammer(HammerHandler hammer)
@@ -67,7 +71,7 @@ namespace Enemy
             if (_isDie) return;
             hammer.TakeDamage(transform.position, _attackPunchForce, _damageCount);
             _animation.PlayPunch();
-            SoundEffects._instance.PlayEnemyAttackSound();
+            SoundEffects.Instance.PlayEnemyAttackSound();
         }
     }
 }

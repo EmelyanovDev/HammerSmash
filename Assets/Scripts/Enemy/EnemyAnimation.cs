@@ -34,7 +34,5 @@ namespace Enemy
         {
             _animator.Play("EnemyDizzy");
         }
-        
-        //method for play takingDamage animation
     }
 }
