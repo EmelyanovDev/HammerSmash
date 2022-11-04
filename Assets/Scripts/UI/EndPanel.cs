@@ -3,18 +3,23 @@ using Scene;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Utilities;
 
 namespace UI
 {
     public class EndPanel : MonoBehaviour, IPointerClickHandler
     {
         [SerializeField] private TMP_Text _tapToPlayText;
-        [SerializeField] private RestartButton _restartButton;
-        [SerializeField] private NextLevelButton _nextLevelButton;
+        [SerializeField] private GameObject _restartButton;
+        [SerializeField] private GameObject _nextLevelButton;
         [SerializeField] private HomeButton _homeButton;
+
+        private bool _isClicked;
         
         private void Start()
         {
+            TimeHandler.Pause();
+            
             HammerHandler.HammerDied += RestartLevel;
             Finish.LevelFinished += NextLevel;
         }
@@ -27,9 +32,13 @@ namespace UI
         
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (_isClicked) return;
+            
+            TimeHandler.SwitchPause();
             _tapToPlayText.gameObject.SetActive(false);
             _homeButton.gameObject.SetActive(true);
             gameObject.SetActive(false);
+            _isClicked = true;
         }
         
         private void RestartLevel()

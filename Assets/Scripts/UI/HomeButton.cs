@@ -7,14 +7,16 @@ namespace UI
     {
         private void OnEnable()
         {
-            Finish.LevelFinished += () => gameObject.SetActive(false);
-            HammerHandler.HammerDied += () => gameObject.SetActive(false);
+            Finish.LevelFinished += Deacivate;
+            HammerHandler.HammerDied += Deacivate;
         }
         
         private void OnDisable()
         {
-            Finish.LevelFinished -= () => gameObject.SetActive(false);
-            HammerHandler.HammerDied -= () => gameObject.SetActive(false);
+            Finish.LevelFinished -= Deacivate;
+            HammerHandler.HammerDied -= Deacivate;
         }
+
+        private void Deacivate() => gameObject.SetActive(false);
     }
 }
